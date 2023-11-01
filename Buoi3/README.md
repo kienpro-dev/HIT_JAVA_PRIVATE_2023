@@ -169,6 +169,7 @@
     }
 ```
 
+
 ## Con trỏ ‘this’
 
 - Trong Java, từ khóa "this" tham chiếu đến thể hiện của lớp đang thực thi, cho phép truy cập vào các thành viên (biến và phương thức) của thể hiện đó.
@@ -195,16 +196,28 @@ public class Person {
 
 ```
 
+
 ## Bài tập và cách phân tích 1 sơ đồ lớp
 
-- Bài 1: Thiết kế lớp Circle có thông tin sau:
+- Bài 1: Thiết kế lớp Account có thông tin sau:
 
-![alt text](https://codelearn.io/Media/Default/Users/TuanLQ7/Java_OOP/class10-1.png)
+![alt text](https://codelearnstorage.s3.amazonaws.com/Media/Default/Users/TuanLQ7/Cpp_OOP/Main-3.png)
 
-- Bài 2: Thiết kế lớp Student có thông tin sau:
+- Account là lớp dùng để mô tả thông tin về các tài khoản ngân hàng.
+- id, name và balance lần lượt là các thuộc tính chỉ số tài khoản, tên chủ tài khoản và số dư trong tài khoản.
+- Account(id: int, name: String) và Account(id: int, name: String, balance: int) là các phương thức khởi tạo có tham số dùng để khởi tạo giá trị cho các thuộc tính tương ứng.
+- getId(), setName(), getName(), getBalance() là các setter, getter.
+- deposit(amount: int) là phương thức dùng để gửi tiền vào tài khoản 1 lượng có giá trị là amount (balance += amount).
+- withdraw(amount: int) là phương thức dùng để rút tiền từ tài khoản 1 lượng có giá trị là amount (balance -= amount). Nếu số dư trong tài khoản không đủ (balance < amount) thì không thực hiện rút tiền và hiển thị ra màn hình:
+```
+    That amount exceeds your current balance.​
+```
+- display() là phương thức dùng để hiển thị ra màn hình thông tin tài khoản. Ví dụ nếu id = 1000, name = "Tuan", balance = 2490 thì khi gọi phương thức display() màn hình sẽ hiển thị ra:
+```
+    Id: 1000
+    Name: Tuan
+    Balance: 2490​
+```
+- Bài 2: Thiết kế lớp Time có thông tin sau:
 
-![alt text](https://codelearn.io/Media/Default/Users/TuanLQ7/Java_OOP/java-oop-23.png)
-
-- Bài 3: Thiết kế lớp Point có thông tin sau:
-
-![alt text](https://codelearn.io/Media/Default/Users/TuanLQ7/Java_OOP/encapsulation8.png)
+![alt text]()
