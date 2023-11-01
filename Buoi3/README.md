@@ -220,4 +220,12 @@ public class Person {
 ```
 - Bài 2: Thiết kế lớp Time có thông tin sau:
 
-![alt text]()
+![alt text](https://scontent.fhan12-1.fna.fbcdn.net/v/t1.15752-9/371458392_842938117480608_7414262609246147306_n.png?_nc_cat=101&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeH0-EXgnbIc1mCFo30fejnTL5t_EHOdzvQvm38Qc53O9BMyUTzYsmtL0R9Y28dU0C4PDEq3v3RMJHWQJj66TOl_&_nc_ohc=_5U2Y21HcNUAX-qGlFR&_nc_ht=scontent.fhan12-1.fna&oh=03_AdSV9Kp-bM_3TG8rEJEzE6H7XEEjDmMeYF0UilV-JZcVGw&oe=6569AB5B)
+
+- Time là lớp được dùng để lưu thông tin về giờ, phút, giây.
+- hour, minute, second lần lượt là các thuộc tính chỉ giờ, phút, giây của lớp Time.
+- Time(hour: int, minute: int, second: int) là phương thức khởi tạo có tham số dùng để khởi tạo giá trị cho các thuộc tính.
+- setTime(hour: int, minute: int, second: int) là phương thức dùng để thay đổi giá trị của các thuộc tính hour, minute, second.
+- nextSecond() là phương thức tăng thời gian của đối tượng lên 1 giây Ví dụ:
+- previousSecond() là phương thức giảm thời gian của đối tượng đi 1 giây.
+- display() là phương thức dùng để hiển thị ra màn hình thông tin về thời gian của đối tượng dưới định dạng "HH:mm:ss". 

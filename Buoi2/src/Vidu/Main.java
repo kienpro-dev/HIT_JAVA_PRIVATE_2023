@@ -22,6 +22,8 @@ public class Main {
         Integer b = 1000;
         System.out.println(a == b); // false
 
+//        System.out.println(a.equals(b));
+
         Integer a2 = 100;
         Integer b2 = 100;
         System.out.println(a == b); // true
