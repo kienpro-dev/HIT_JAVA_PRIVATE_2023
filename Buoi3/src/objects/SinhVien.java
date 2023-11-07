@@ -18,8 +18,7 @@ public class SinhVien {
     }
 
     public SinhVien(SinhVien a) {
-        this.msv = a.msv;
-        this.ten = a.ten;
+        this(a.getMsv(), a.getTen());
     }
 
     public String getMsv() {
