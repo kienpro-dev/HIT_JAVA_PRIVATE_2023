@@ -3,7 +3,7 @@
 ## 1. Static và final
 
 - Static: Trong Java, từ khóa "static" được sử dụng để khai báo một thành phần (biến hoặc phương thức) thuộc về lớp chứ không thuộc về các thể hiện cụ thể của lớp đó. Điều này có nghĩa là khi một biến hoặc phương thức được khai báo là static, chúng có thể được truy cập thông qua tên lớp mà không cần tạo ra một thể hiện của lớp đó.
-    - Biến static (static variables)
+    - Thuộc tính static (static variables)
     - Phương thức static (static methods)
     - Khối static (static blocks)
     - Lớp static (static class)
