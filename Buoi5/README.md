@@ -1,4 +1,4 @@
-# Buổi 6
+# Buổi 5
 
 ## List, ArrayList trong Java OOP
 
