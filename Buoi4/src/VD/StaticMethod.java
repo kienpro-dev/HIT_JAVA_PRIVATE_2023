@@ -1,6 +1,4 @@
-class SinhVien2 {
-
-}
+package VD;
 
 public class StaticMethod {
 

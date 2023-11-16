@@ -1,3 +1,5 @@
+package VD;
+
 public class SinhVien {
     private static String gvcn = "abc";
     private static int count = 0;
