@@ -1,3 +1,5 @@
+package VD;
+
 public class SinhVien {
     private int id;
     private String name;
@@ -9,7 +11,7 @@ public class SinhVien {
 
     @Override
     public String toString() {
-        return "SinhVien{" +
+        return "VD.SinhVien{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

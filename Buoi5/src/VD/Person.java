@@ -1,3 +1,5 @@
+package VD;
+
 public class Person {
      private String name;
      private int age;
@@ -22,7 +24,7 @@ public class Person {
     }
 
     public void in() {
-        System.out.println("Person");
+        System.out.println("VD.Person");
     }
 }
 

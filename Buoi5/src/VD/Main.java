@@ -1,3 +1,9 @@
+package VD;
+
+import BaiTapTrenLop.HoaDon;
+import BaiTapTrenLop.KhachHang;
+import BaiTapTrenLop.SanPham;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Integer> integers = new ArrayList<>();
-//        ArrayList<SinhVien> students = new ArrayList<>();
+//        ArrayList<VD.SinhVien> students = new ArrayList<>();
 //
 //        integers.add(5);
 //        integers.add(4);
@@ -26,7 +32,7 @@ public class Main {
 //        System.out.println(integers);
 //
 //        integers.forEach(i -> System.out.println(i));
-//        Student a = new Student();
+//        VD.Student a = new VD.Student();
 //        a.in();
         HoaDon x = new HoaDon();
         x.setTen("HOA DON BAN HANG");

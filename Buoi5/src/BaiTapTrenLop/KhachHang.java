@@ -1,3 +1,5 @@
+package BaiTapTrenLop;
+
 public class KhachHang {
     private String ten;
     private String sdt;
@@ -38,7 +40,7 @@ public class KhachHang {
 
     @Override
     public String toString() {
-        return "KhachHang{" +
+        return "BaiTapTrenLop.KhachHang{" +
                 "ten='" + ten + '\'' +
                 ", sdt='" + sdt + '\'' +
                 ", diaChi='" + diaChi + '\'' +

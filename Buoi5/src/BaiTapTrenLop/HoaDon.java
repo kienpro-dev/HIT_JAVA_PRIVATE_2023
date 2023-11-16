@@ -1,5 +1,6 @@
+package BaiTapTrenLop;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class HoaDon {
     private String ten;

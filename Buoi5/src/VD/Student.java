@@ -1,4 +1,6 @@
-// Lớp Student kế thừa lớp Person thông qua từ khóa extends
+package VD;
+
+// Lớp VD.Student kế thừa lớp VD.Person thông qua từ khóa extends
 public class Student extends Person {
     private double gpa;
 
@@ -23,7 +25,7 @@ public class Student extends Person {
 
     public void in() {
         super.in();
-        System.out.println("Student");
+        System.out.println("VD.Student");
     }
 
 

@@ -13,7 +13,7 @@
     public static void main(String[] args) {
         ArrayList<Integer> array1 = new ArrayList<Integer>();
 
-        ArrayList<Person> array2 = new ArrayList<Person>();
+        ArrayList<VD.Person> array2 = new ArrayList<VD.Person>();
     }
 ```
 
@@ -106,11 +106,11 @@
   - ...
 
 ```java
-    class Person{
+    class VD.Person{
         // private String name;
         protected String name;
 
-        public Person(String name) {
+        public VD.Person(String name) {
             this.name = name;
         }
         public String getName() {
@@ -122,12 +122,12 @@
 
     }
 
-    // Lớp Student kế thừa lớp Person thông qua từ khóa extends
-    class Student extends Person {
+    // Lớp VD.Student kế thừa lớp VD.Person thông qua từ khóa extends
+    class VD.Student extends VD.Person {
         private double gpa;
 
         // Khi khai báo constructor lớp con cần truyền đầy đủ tham số cả cha lẫn con
-        public Student(String name, double gpa) {
+        public VD.Student(String name, double gpa) {
             // thông qua từ khóa super gọi đến constructor lớp cha
             super(name);
             this.gpa = gpa;
@@ -151,24 +151,24 @@
 - Sử dụng để cung cấp 1 phương thức được cài đặt khác đối với mỗi lớp con khác nhau của lớp cha.
 
 ```java
-    class Person{
+    class VD.Person{
         public void display() {
-            System.out.println("This is Person");
+            System.out.println("This is VD.Person");
         }
     }
 
-    class Student extends Person{
+    class VD.Student extends VD.Person{
         @Override
         public void display() {
-            System.out.println("This is Student");
+            System.out.println("This is VD.Student");
         }
     }
 
     class Test {
         public static void main(String[] args) {
-            Student s = new Student();
+            VD.Student s = new VD.Student();
             s.display();
-            // This is Student
+            // This is VD.Student
         }
     }
 ```
