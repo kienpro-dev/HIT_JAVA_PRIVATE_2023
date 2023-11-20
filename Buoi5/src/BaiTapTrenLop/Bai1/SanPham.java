@@ -1,4 +1,4 @@
-package BaiTapTrenLop;
+package BaiTapTrenLop.Bai1;
 
 public class SanPham {
     private String ten;
@@ -40,7 +40,7 @@ public class SanPham {
 
     @Override
     public String toString() {
-        return "BaiTapTrenLop.SanPham{" +
+        return "BaiTapTrenLop.Bai1.SanPham{" +
                 "ten='" + ten + '\'' +
                 ", sl=" + sl +
                 ", gia=" + gia +

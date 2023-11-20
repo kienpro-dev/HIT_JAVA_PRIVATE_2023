@@ -1,8 +1,8 @@
 package VD;
 
-import BaiTapTrenLop.HoaDon;
-import BaiTapTrenLop.KhachHang;
-import BaiTapTrenLop.SanPham;
+import BaiTapTrenLop.Bai1.HoaDon;
+import BaiTapTrenLop.Bai1.KhachHang;
+import BaiTapTrenLop.Bai1.SanPham;
 
 import java.util.ArrayList;
 import java.util.List;

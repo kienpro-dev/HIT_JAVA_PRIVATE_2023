@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class login {
+import javax.swing.*;
+
+public class login {
+    private JPanel panel1;
 }
