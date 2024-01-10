@@ -207,3 +207,11 @@ public void releaseConnection(Connection con) throws SQLException {
 }
 
 ```
+
+- Dọn dẹp chương trình và đóng tất cả kết nối
+```java
+protected void finalize() throws Throwable{
+    this.pools.clear();
+    this.pools=null;
+}
+```
