@@ -5,14 +5,13 @@ import java.sql.SQLException;
 public class JDBCConnection {
 
     public static Connection getConnection() {
-        final String user = "sa";
-        final String pass = "1";
+        final String user = "root";
+        final String pass = "root";
         final String dbName = "test";
 
-        String url = "jdbc:sqlserver://localhost:1433;" +
-                "databaseName=" + dbName;
+        String url = "jdbc:mysql://localhost:3306/" + dbName;
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

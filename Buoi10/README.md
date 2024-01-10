@@ -98,3 +98,112 @@ public static Connection getConnection(){
     return null;
   }
 ```
+## Thực hiện tìm kiếm, thêm, sửa, xóa từ cơ sở dữ liệu
+
+- Tìm kiếm: thực thi với câu lệnh SELECT trong SQL
+
+```java
+public List<>SinhVien> danhSachSinhVien() {
+        // Tạo List SinhVien để lưu trữ kết quả
+        List<SinhVien> list = new ArrayList<>();
+        
+        // Tạo chuỗi kết nối với cơ sở dữ liệu
+        Connection con = getConnection();
+
+        // Viết câu lệnh truy vấn SQL
+        String sql = "SELECT * FROM SinhVien";
+        
+        // Tạo Statement quản lý câu lệnh truy vấn
+        Statement statement = con.createStatement();
+        
+        // Thực thi câu lệnh sql trả về kết quả
+        ResultSet rs = statement.executeQuery();
+        
+        // Lặp qua từng kết quả trả về trong ResultSet để xử lý
+        while (rs.next()) {
+            
+            String name = rs.getString("name");
+            String age = rs.getInt("age");
+            SinhVien a = new SinhVien(name, age);
+            list.add(a);
+        }
+        
+        // Đóng kết nối sau khi truy vấn xong
+        con.close();
+        return list;
+}
+    
+```
+
+- Thêm: thực thi với câu lệnh INSERT trong SQL
+- Có thể sử dụng PrepareStatement để thay thế cho Statement để viết truy vấn:
+  - PrepareStatement có hiệu suất cao hơn Statement
+  - PrepareStatement sử dụng tham số để tham chiếu giá trị mà không tạo ra câu lệnh SQL tường minh, giúp ánh xạ giá trị 1 cách linh động
+  - PrepareStatement ngăn tấn công SQL Injection, ...
+```java
+public void themSinhVien(SinhVien s) {
+        // Tạo chuỗi kết nối với cơ sở dữ liệu
+        Connection con = getConnection();
+        
+        // Tạo truy vấn sử dụng PrepareStatement để tham chiếu giá trị
+        String sql = "INSERT INTO SinhVien VALUES(? , ?)";
+
+        // Tạo PreparedStatement để quản lý câu lệnh
+        PreparedStatement ps = con.prepareStatement(sql);
+        
+        // Tham chiếu đến giá trị của câu lệnh SQL
+        ps.setString(1, s.getName());
+        ps.setInt(2, s.getAge());
+        
+        // Cập nhật giá trị sau khi thay đổi
+        ps.executeUpdate();
+} 
+
+```
+
+- Sửa: thực thi với câu lệnh UPDATE trong SQL
+- Xóa: thực thi với câu lệnh DELETE trong SQL
+
+## Quản lý kết nối JDBC bằng Connection pooling
+- Connection Pooling là một kỹ thuật được sử dụng để quản lý và tái sử dụng các kết nối đến Database
+- Mục tiêu của Connection Pooling là tối ưu hóa việc quản lý kết nối, giảm thiểu tạo và đóng kết nối liên tục, cũng như cải thiện hiệu suất ứng dụng.
+- Khi một ứng dụng Java tương tác với cơ sở dữ liệu thông qua JDBC, việc mở và đóng kết nối có thể gây tốn kém và làm giảm hiệu suất. Connection Pooling giải quyết vấn đề này bằng cách tạo sẵn một pool các kết nối đến cơ sở dữ liệu và cung cấp chúng cho ứng dụng khi cần. Khi ứng dụng đã sử dụng xong kết nối, nó không đóng nó mà chỉ trả lại kết nối đó vào pool để sử dụng lại.
+## Áp dụng
+
+- Xây dựng chuỗi kết nối
+
+```java
+
+    String user = "root";
+    String password = "root";
+    Stack<Connection> pools = new Stack<>();
+    
+    String url = "jdbc:mysql://localhost:3306/test";
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      return DriverManager.getConnection(url, user, )password;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+```
+
+- Sử dụng pools quản lý chuỗi kết nối
+
+```java 
+public Connection getConnection() throws SQLException {
+	if(this.pools.isEmpty()) {
+		return DriverManager.getConnection(this.url, this.username, this.password);
+	} else {
+		return this.pools.pop();
+	}
+}
+```
+
+- Giải phóng kết nối và lưu vào pools
+```java
+public void releaseConnection(Connection con) throws SQLException {
+    this.pools.push(conn);
+}
+
+```
