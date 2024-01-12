@@ -17,13 +17,4 @@ public class JDBCConnection {
         }
         return null;
     }
-
-    public static void main(String[] args) {
-        Connection conn = getConnection();
-        if(conn == null) {
-            System.out.println("Sai");
-        } else {
-            System.out.println("Dung");
-        }
-    }
 }
